@@ -4,7 +4,7 @@ from odoo import fields, models, api
 
 
 class Person(models.Model):
-    _name = "website_persons"
+    _name = "website.persons"
     _description = "Persons table for website app"
 
     first_name = fields.Char(string="First name", size=255)
