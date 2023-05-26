@@ -1,7 +1,8 @@
 <odoo>
-    <menuitem id="persons_menu_root" name="Persons menu">
-        <menuitem id="persons_first_level_menu" name="Persons First Level">
-            <menuitem id="persons_model_menu_action" action="person_action"/>
-        </menuitem>
+    <menuitem id="menu_persons" name="Persons" parent="website.menu_website_configuration">
+        <menuitem id="menu_persons_list"
+                  name="Persons List"
+                  sequence="1"
+                  action="persons.person_action"/>
     </menuitem>
 </odoo>
