@@ -6,7 +6,11 @@
     Module for persons processing
     """,
     # data files always loaded at installation
-    "data": ["security/ir.model.access.csv", "views/persons_views.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/persons_views.xml",
+        "views/persons_menus.xml",
+    ],
     # data files containing optionally loaded demonstration data
     "demo": [],
     "application": True,

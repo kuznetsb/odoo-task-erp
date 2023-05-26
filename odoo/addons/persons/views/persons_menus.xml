@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem id="persons_menu_root" name="Persons menu">
+        <menuitem id="persons_first_level_menu" name="Persons First Level">
+            <menuitem id="persons_model_menu_action" action="person_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>
