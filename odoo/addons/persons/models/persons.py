@@ -10,9 +10,9 @@ class Person(models.Model):
 
     first_name = fields.Char(string="First name", size=255)
     last_name = fields.Char(string="Last name", size=255)
-    full_name = fields.Char(string="Full name", compute="_get_full_name", default="")
+    full_name = fields.Char(string="Full name", compute="_get_full_name")
     birthday = fields.Date(string="Birthday date")
-    age = fields.Integer(string="Age", compute="_compute_age", default=0)
+    age = fields.Integer(string="Age", compute="_compute_age")
     sex = fields.Selection(
         selection=[("m", "male"), ("f", "female"), ("non", "non-binary")], string="Sex"
     )
@@ -28,6 +28,8 @@ class Person(models.Model):
         for rec in self:
             if rec.first_name and rec.last_name:
                 rec.full_name = rec.first_name + " " + rec.last_name
+            else:
+                rec.full_name = ""
 
     @api.depends("birthday")
     def _compute_age(self):
@@ -35,3 +37,5 @@ class Person(models.Model):
         for rec in self:
             if rec.birthday:
                 rec.age = int(relativedelta(today, rec.birthday).years)
+            else:
+                rec.age = 0
