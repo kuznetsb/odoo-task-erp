@@ -1,4 +1,19 @@
 <odoo>
+    <record id="persons_view_tree" model="ir.ui.view">
+        <field name="name">website.persons.tree</field>
+        <field name="model">website.persons</field>
+        <field name="arch" type="xml">
+            <tree string="Person_fields" editable="bottom">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="full_name"/>
+                <field name="birthday"/>
+                <field name="age"/>
+                <field name="sex"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="person_action" model="ir.actions.act_window">
         <field name="name">Persons</field>
         <field name="res_model">website.persons</field>
