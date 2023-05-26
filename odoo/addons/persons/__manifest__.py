@@ -10,6 +10,7 @@
         "security/ir.model.access.csv",
         "views/persons_views.xml",
         "views/persons_menus.xml",
+        "views/template.xml",
     ],
     # data files containing optionally loaded demonstration data
     "demo": [],

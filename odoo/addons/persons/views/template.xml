@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        <template id="persons_page" name="Last 5 Persons Pages" inherit_id="website.layout">
+            <xpath expr="//main" position="inside">
+                <div class="row">
+                    <t t-foreach="persons" t-as="person">
+                        <div class="col-md-4">
+                            <div class="person-card" style="background-color: #F2F2F2;">
+                                <div class="full-name">
+                                    <t t-esc="person.full_name"/>
+                                </div>
+                                <div class="sex" t-if="person.sex">
+                                    <t t-esc="person._get_sex_display()"/>
+                                </div>
+                                <div class="age">
+                                    <t t-esc="person.age"/>
+                                </div>
+                                <div class="company-name">
+                                    <t t-esc="person.company_id.name"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+
+

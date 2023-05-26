@@ -39,3 +39,6 @@ class Person(models.Model):
                 rec.age = int(relativedelta(today, rec.birthday).years)
             else:
                 rec.age = 0
+
+    def _get_sex_display(self):
+        return dict(self._fields["sex"].selection).get(self.sex)
